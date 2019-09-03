@@ -1,0 +1,11 @@
+version: '3'
+services:
+  # build is your actual build spec
+  build:
+    image: ${REPOSITORY_URL}
+#    env_file: .env
+    build:
+      context: .
+      args:
+        - AWS_REGION=${AWS_REGION}
+

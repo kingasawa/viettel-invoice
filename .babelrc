@@ -1,0 +1,11 @@
+{
+  "presets": [
+    ["env", {
+      "exclude": [
+        "transform-regenerator",
+        "transform-async-to-generator"
+      ],
+      "useBuiltIns": true
+    }]
+  ]
+}

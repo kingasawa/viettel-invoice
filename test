@@ -1,0 +1,1 @@
+sed  -e "s/ENV_SITE_URL=default/ENV_SITE_URL=phongshop.goappable.com/g"  -e "s/ENV_SITE_NAME=default/ENV_SITE_NAME=phongshop/g"  -e "s/ENV_PS_SHOP_EMAIL=default/ENV_PS_SHOP_EMAIL=phongdang@gmail.com/g" setup.sh.tpl >setup.sh

@@ -1,0 +1,62 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uat-ecommerce-provisioning
+spec:
+  selector:
+    matchLabels:
+      app: uat-ecommerce-provisioning
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: uat-ecommerce-provisioning
+    spec:
+      containers:
+        - name: uat-ecommerce-provisioning
+          image: gcr.io/dots-244203/ecommerce-provisioning:latest
+          env:
+            - name: SERVER_PORT
+              value: "1337"
+            - name: NODE_ENV
+              value: "production"
+
+          resources:
+            requests:
+              cpu: 10m
+              memory: 50Mi
+#---
+#apiVersion: autoscaling/v2beta1
+#kind: HorizontalPodAutoscaler
+#metadata:
+#  name: uat-ecommerce-provisioning
+#spec:
+#  scaleTargetRef:
+#    apiVersion: extensions/v1beta1
+#    kind: Deployment
+#    name: uat-ecommerce-provisioning
+#  minReplicas: 1
+#  maxReplicas: 2
+#  metrics:
+#    - type: Resource
+#      resource:
+#        name: cpu
+#        targetAverageUtilization: 50
+#    - type: Resource
+#      resource:
+#        name: memory
+#        targetAverageUtilization: 50
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: uat-ecommerce-provisioning
+spec:
+  selector:
+    app: uat-ecommerce-provisioning
+  ports:
+    - protocol: TCP
+      port: 1337
+      targetPort: 1337

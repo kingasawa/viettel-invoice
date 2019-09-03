@@ -1,0 +1,24 @@
+{
+  "name": "viettel-api-client",
+  "version": "1.0.0",
+  "author": "trancatkhanh@gmail.com",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "NODE_ENV=development NODE_PATH=. nodemon app.js",
+    "start": "NODE_PATH=. node app.js"
+  },
+  "dependencies": {
+    "apicache": "^1.5.1",
+    "axios": "^0.19.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "dotenv": "^5.0.1",
+    "express-http-to-https": "^1.1.4",
+    "json-server": "^0.12.1",
+    "lodash": "^4.17.10"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
