@@ -16,7 +16,7 @@
     "dotenv": "^5.0.1",
     "express-http-to-https": "^1.1.4",
     "json-server": "^0.12.1",
-    "lodash": "^4.17.10"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
